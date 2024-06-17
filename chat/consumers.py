@@ -11,9 +11,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 user_ids = [int(request_user.id), int(chat_with_user)]
                 user_ids.sort()
                 self.room_name = f'chat_{user_ids[0]}_{user_ids[1]}'
-                
-                
-                
+                print(f"Room name: {self.room_name}")
                 await self.channel_layer.group_add(
                     self.room_name,
                     self.channel_name
