@@ -24,7 +24,7 @@ def registration_view(request):
 def login_view(request):
     if request.method == 'POST':
         serializer = LoginSerializer(data=request.data)
-        print(serializer)
+
         data = {}
         if serializer.is_valid():
                 print(serializer.validated_data)
@@ -35,7 +35,7 @@ def login_view(request):
                 data['user_id'] = serializer.validated_data['id']
         else:
                 data['response'] = 'Invalid credentials'
-        print(data)
+
     else:
             data = serializer.errors
 

@@ -29,6 +29,7 @@ service-identity
 six
 sqlparse
 Twisted
+gunicorn
 txaio
 typing_extensions
 zope.interface
