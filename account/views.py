@@ -35,7 +35,6 @@ def login_view(request):
                 data['user_id'] = serializer.validated_data['id']
         else:
                 data['response'] = 'Invalid credentials'
-
     else:
             data = serializer.errors
 

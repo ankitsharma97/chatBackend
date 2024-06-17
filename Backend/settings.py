@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import sys
 import os
 from pathlib import Path
 import dj_database_url
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7imgxqod(*-t4_6&3vpc&iheh7h&pmzmf=(jxdxalrs+pv+x=o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'account',
     'chat'
@@ -65,8 +66,9 @@ AUTH_USER_MODEL = 'account.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'account.tokenAuthentication.TokenAuthentication',
-    ]
+    ],
 }
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
